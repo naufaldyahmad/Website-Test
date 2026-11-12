@@ -4,6 +4,8 @@ import { getCurrentIsoWeek, getWeekBounds } from '@/lib/date-utils';
 import { detectCollisions, ScheduleCandidate } from '@/lib/collision';
 import { getSession } from '@/lib/auth';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);

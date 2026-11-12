@@ -193,7 +193,7 @@ export async function executeDuplicateSchedule(params: DuplicateScheduleParams) 
 
   return {
     success: true,
-    createdSchedule,
+    createdSchedule: newWeeklySchedule,
     totalCopied: previewEntries.length,
     warnings: preview.collisionWarnings,
   };
