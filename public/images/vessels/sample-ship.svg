@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EBF4FB"/>
+      <stop offset="100%" stop-color="#CFE2FE"/>
+    </linearGradient>
+    <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0369A1"/>
+    </linearGradient>
+    <linearGradient id="hullGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="60%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="600" height="300" fill="url(#skyGrad)"/>
+  
+  <!-- Sea Water -->
+  <rect y="210" width="600" height="90" fill="url(#seaGrad)"/>
+  <path d="M 0,210 Q 50,205 100,210 T 200,210 T 300,210 T 400,210 T 500,210 T 600,210 L 600,220 L 0,220 Z" fill="#38BDF8" opacity="0.6"/>
+
+  <!-- Ship Hull -->
+  <!-- Stern at Left, Bow at Right -->
+  <path d="M 90,175 L 120,225 L 490,225 L 530,175 Z" fill="url(#hullGrad)"/>
+  <path d="M 120,220 L 490,220 L 515,185 L 105,185 Z" fill="#DC2626"/>
+
+  <!-- Superstructure / Cabins -->
+  <rect x="150" y="115" width="280" height="60" rx="3" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="190" y="75" width="180" height="40" rx="2" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="230" y="45" width="80" height="30" rx="2" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
+
+  <!-- Navigation Bridge Windows -->
+  <rect x="235" y="52" width="12" height="8" rx="1" fill="#0284C7"/>
+  <rect x="252" y="52" width="12" height="8" rx="1" fill="#0284C7"/>
+  <rect x="269" y="52" width="12" height="8" rx="1" fill="#0284C7"/>
+  <rect x="286" y="52" width="12" height="8" rx="1" fill="#0284C7"/>
+
+  <!-- Funnel / Cerobong Kapal with Pelindo Blue / Orange Band -->
+  <path d="M 200,45 L 215,45 L 212,20 L 197,20 Z" fill="#005BAC"/>
+  <rect x="198" y="28" width="15" height="5" fill="#F59E0B"/>
+
+  <!-- Radar Mast -->
+  <line x1="270" y1="45" x2="270" y2="15" stroke="#475569" stroke-width="3"/>
+  <line x1="255" y1="25" x2="285" y2="25" stroke="#475569" stroke-width="2"/>
+
+  <!-- Cabin Portholes / Windows -->
+  <circle cx="175" cy="140" r="5" fill="#0284C7"/>
+  <circle cx="195" cy="140" r="5" fill="#0284C7"/>
+  <circle cx="215" cy="140" r="5" fill="#0284C7"/>
+  <circle cx="235" cy="140" r="5" fill="#0284C7"/>
+  <circle cx="255" cy="140" r="5" fill="#0284C7"/>
+  <circle cx="275" cy="140" r="5" fill="#0284C7"/>
+  <circle cx="295" cy="140" r="5" fill="#0284C7"/>
+  <circle cx="315" cy="140" r="5" fill="#0284C7"/>
+  <circle cx="335" cy="140" r="5" fill="#0284C7"/>
+  <circle cx="355" cy="140" r="5" fill="#0284C7"/>
+  <circle cx="375" cy="140" r="5" fill="#0284C7"/>
+  <circle cx="395" cy="140" r="5" fill="#0284C7"/>
+
+  <!-- Lifeboats -->
+  <rect x="160" y="160" width="35" height="10" rx="5" fill="#F97316"/>
+  <rect x="410" y="160" width="35" height="10" rx="5" fill="#F97316"/>
+
+  <!-- Vessel Labeling -->
+  <text x="300" y="275" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">PELABUHAN NUSANTARA PAREPARE</text>
+</svg>
+

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 100" width="420" height="100">
+  <defs>
+    <linearGradient id="pelindoWhiteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#FFFFFF" />
+    </linearGradient>
+  </defs>
+  <g transform="translate(10, 10)">
+    <path d="M 15,65 C 10,40 30,15 55,15 C 75,15 88,30 85,48 C 83,62 70,72 55,72 C 38,72 26,62 26,48 C 26,38 34,30 44,30 C 52,30 58,36 57,44 C 56,50 51,54 46,54" 
+          fill="none" stroke="url(#pelindoWhiteGrad)" stroke-width="9" stroke-linecap="round"/>
+    <path d="M 32,58 C 42,66 60,65 70,55 C 80,45 80,28 68,18 C 55,8 35,12 25,25" 
+          fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" opacity="0.9"/>
+    <circle cx="58" cy="22" r="5" fill="#38BDF8" />
+  </g>
+  <text x="110" y="55" font-family="'Inter', 'Arial Black', sans-serif" font-weight="900" font-size="40" fill="#FFFFFF" letter-spacing="2">PELINDO</text>
+  <text x="112" y="74" font-family="'Inter', 'Helvetica Neue', sans-serif" font-weight="600" font-size="12" fill="#E2E8F0" letter-spacing="1.5">PELABUHAN NUSANTARA PAREPARE</text>
+  <rect x="112" y="78" width="220" height="2" fill="#38BDF8" rx="1"/>
+</svg>
+

@@ -1,0 +1,105 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String     @id @default(cuid())
+  username     String     @unique
+  passwordHash String
+  fullName     String
+  role         String     @default("ADMIN") // ADMIN, VISITOR
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  auditLogs    AuditLog[]
+}
+
+model Berth {
+  id           String          @id @default(cuid())
+  code         String          @unique
+  name         String
+  lengthMeters Float           @default(366.0)
+  description  String?
+  isActive     Boolean         @default(true)
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+  schedules    ScheduleEntry[]
+}
+
+model Vessel {
+  id           String          @id @default(cuid())
+  code         String          @unique
+  name         String
+  vesselType   String          @default("Kargo Umum") // Penumpang, Petikemas, Kargo Curah, Tanker, Roro, Tugboat
+  loa          Float // Length Overall (meters)
+  beam         Float // Lebar (meters)
+  draft        Float // Draft (meters)
+  grossTonnage Float // GT
+  agentName    String? // Nama Agen Pelayaran
+  imageUrl     String? // URL atau Base64 Image
+  remarks      String? // Catatan tambahan
+  isDeleted    Boolean         @default(false)
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+  schedules    ScheduleEntry[]
+}
+
+model WeeklySchedule {
+  id         String          @id @default(cuid())
+  year       Int
+  weekNumber Int
+  startDate  DateTime // Hari awal minggu 00:00 WITA
+  endDate    DateTime // Hari akhir minggu 23:59 WITA
+  status     String          @default("AKTIF") // DRAFT, AKTIF, ARSIP
+  notes      String?
+  createdAt  DateTime        @default(now())
+  updatedAt  DateTime        @updatedAt
+  entries    ScheduleEntry[]
+
+  @@unique([year, weekNumber])
+}
+
+model ScheduleEntry {
+  id                 String         @id @default(cuid())
+  weeklyScheduleId   String
+  weeklySchedule     WeeklySchedule @relation(fields: [weeklyScheduleId], references: [id], onDelete: Cascade)
+  vesselId           String
+  vessel             Vessel         @relation(fields: [vesselId], references: [id])
+  berthId            String
+  berth              Berth          @relation(fields: [berthId], references: [id])
+  eta                DateTime
+  etd                DateTime
+  startMeter         Float // Rentang posisi meter terkecil di dermaga
+  endMeter           Float // Rentang posisi meter terbesar di dermaga
+  bowPositionMeter   Float // Posisi meter haluan
+  sternPositionMeter Float // Posisi meter buritan
+  orientation        String         @default("BOW_NORTH_STERN_SOUTH") // BOW_NORTH_STERN_SOUTH | BOW_SOUTH_STERN_NORTH
+  dockedLength       Float // Panjang badan menempel dermaga (m)
+  overhangLength     Float          @default(0.0) // Panjang badan menggantung di luar dermaga (m)
+  overhangPosition   String         @default("NONE") // NONE, BOW, STERN, BOTH
+  notes              String?
+  createdAt          DateTime       @default(now())
+  updatedAt          DateTime       @updatedAt
+}
+
+model SystemSetting {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String
+  updatedAt DateTime @updatedAt
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  userId     String?
+  user       User?    @relation(fields: [userId], references: [id])
+  action     String // CREATE, UPDATE, DELETE, DUPLICATE, EXPORT
+  entityType String // VESSEL, SCHEDULE, BERTH, AUTH, SETTING
+  entityId   String?
+  details    String? // JSON metadata
+  createdAt  DateTime @default(now())
+}

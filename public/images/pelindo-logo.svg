@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 100" width="420" height="100">
+  <defs>
+    <linearGradient id="pelindoGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00A3E0" />
+      <stop offset="100%" stop-color="#005BAC" />
+    </linearGradient>
+    <linearGradient id="pelindoGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#005BAC" />
+      <stop offset="100%" stop-color="#0B2545" />
+    </linearGradient>
+  </defs>
+  <!-- Pelindo Iconic Maritime Wave Symbol -->
+  <g transform="translate(10, 10)">
+    <!-- Outer Wave -->
+    <path d="M 15,65 C 10,40 30,15 55,15 C 75,15 88,30 85,48 C 83,62 70,72 55,72 C 38,72 26,62 26,48 C 26,38 34,30 44,30 C 52,30 58,36 57,44 C 56,50 51,54 46,54" 
+          fill="none" stroke="url(#pelindoGrad1)" stroke-width="9" stroke-linecap="round"/>
+    <!-- Inner Dynamic Arc -->
+    <path d="M 32,58 C 42,66 60,65 70,55 C 80,45 80,28 68,18 C 55,8 35,12 25,25" 
+          fill="none" stroke="url(#pelindoGrad2)" stroke-width="7" stroke-linecap="round" opacity="0.85"/>
+    <!-- Forward Dot / Compass Point -->
+    <circle cx="58" cy="22" r="5" fill="#00A3E0" />
+  </g>
+
+  <!-- PELINDO Wordmark -->
+  <text x="110" y="55" font-family="'Inter', 'Arial Black', sans-serif" font-weight="900" font-size="40" fill="#005BAC" letter-spacing="2">PELINDO</text>
+  
+  <!-- Subtitle Tagline -->
+  <text x="112" y="74" font-family="'Inter', 'Helvetica Neue', sans-serif" font-weight="600" font-size="12" fill="#64748B" letter-spacing="1.5">PELABUHAN NUSANTARA PAREPARE</text>
+  <rect x="112" y="78" width="220" height="2" fill="#00A3E0" rx="1"/>
+</svg>
+
